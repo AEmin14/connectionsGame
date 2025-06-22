@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connections Game</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 4fr);
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+
+    .card {
+        width: 200px;
+        height: 160px;
+        background-color: white;
+        border-radius: 4px;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-style: solid;
+        border-width: 2px;
+        border-color: transparent;
+    }
+
+    .selected-card {
+      border-color: green;
+    }
+
+    .ctrl-btns{
+        margin-top: 20px;
+        margin-left: 12px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    .shuffle-btn, .deselect-btn{
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: mediumaquamarine;
+        color: white;
+        transition: background-color 0.3s ease;
+    }
+    .remaining-attempts {
+        font-size: 16px;
+        font-weight: bold italic;
+        text-align: center;
+        margin-top: 20px;
+        color: white;
+        border: none;
+        background-color: mediumaquamarine;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin-left: 12px;
+    }
+
+    @keyframes fadeIn {
+        0%, 100% {opacity: 0;}
+        50% {opacity: 1;}
+    }
+
+    .one-away {
+        border: none;
+        border-radius: 5px;
+        color:  white;
+        background-color: mediumaquamarine;
+        padding: 10px 20px;
+        animation: zoom 2s linear forwards;
+        position: fixed;
+        right: 50px;
+        bottom: 20px;
+    }
+
+    @keyframes zoom {
+        0%, 100% {scale:  100%;}
+        50% {scale: 125%;}
+    }
+    
+    @keyframes shake {
+      0% {transform: translate(0px);}
+      50% {transform: translate(0px);}
+      65% {transform: translateX(30px);}
+      75% {transform: translateX(-30px);}
+      85% {transform: translateX(30px);}
+      95% {transform: translateX(-30px);}
+      100% {transform: translateX(0px);}
+    } 
+
+    .shake-card{
+      border-color: blue;
+      animation: shake 1.5s ease-in-out forwards 0.5s;
+    }
+    .card:hover {
+        cursor: pointer;
+        background-color: #e0e0e0;
+    }
+    .card img {
+        height: 100%;
+        width: auto;
+    }
+    .grupa1 {
+        grid-column:  span 4;
+        background-color: rgb(0, 98, 128);
+        animation: zoom 2s linear forwards;
+        align-items: center;
+        text-align:  center;
+    }
+    .grupa2 {
+        grid-column:  span 4;
+        background-color: orchid;
+        animation: zoom 2s linear forwards;
+        align-items: center;
+        text-align:  center;
+    }
+    .grupa3 {
+        grid-column:  span 4;
+        background-color: orange;
+        animation: zoom 2s linear forwards;
+        align-items: center;
+        text-align:  center;
+    }
+    .grupa4 {
+        grid-column:  span 4;
+        background-color: olivedrab;
+        animation: zoom 2s linear forwards;
+        align-items: center;
+        text-align:  center;
+    }
+    .game-over {
+        text-align: center;
+        border: solid;
+        border-color: red;
+        border-radius: 5px;
+        color: red;
+        animation: zoom 4s linear forwards;
+        position: fixed;
+        right: 50px 
+    }
+</style>
+
+<body>
+    <div id="app"></div>
+    <script type="module" src="/Program.js"></script>
+</body>
+
+</html>
